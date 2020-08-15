@@ -36,12 +36,12 @@ public:
     {
         // We want to be loaded into as few as possible processess to save ram+cpu-time
 
-        if(ams::ncm::IsApplicationProgramId(client_info.program_id))
+        if(ams::ncm::IsApplicationId(client_info.program_id))
         {
             return true;
         }
 
-        if(ams::ncm::IsAppletProgramId(client_info.program_id))
+        if(ams::ncm::IsSystemAppletId(client_info.program_id))
         {
             return client_info.program_id.value != 0x010000000000100Cul;
         }
